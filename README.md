@@ -10,7 +10,6 @@ available download from https://docs.docker.com/docker-for-mac/install/#download
 3. $ docker-machine ip default (list docker ip)
 4. $ docker rmi $(docker images) -q
 
-
 ## Install Jenkins docker container
 Jenkins docker image pull from https://hub.docker.com/r/jenkinsci/jenkins
 Install instructions at https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+with+Docker
@@ -33,15 +32,25 @@ image pull from https://hub.docker.com/r/sonatype/nexus/
 default url: http://localhost:8081/nexus/ 
 default user/password: admin/admin123
 
-## Install mysql+phpadmin docker container
-image pull from https://hub.docker.com/r/sonatype/nexus/
+## Install mysql docker container
+Press command + space to open up the quick search window, Then enter 'terminal' to open the Terminal'
+1. $ docker search mysql (show all available mysql)
+2. $ docker pull mysql (download mysql docker image)
+3. $ docker images (verify downloaded images)
+3. $ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root123 -p 3306:3306 -d mysql (create and run mysql container at the first time)
+4. $ docker stop mysql (stop mysql container)
+5. $ docker start mysql (start mysql container)
+6. $ docker rm mysql (delete existing mysql container)
 
-1. open docker command line
-2. $ docker pull sonatype/nexus (download nexus docker image)
-3. $ docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss (create and run nexus container at the first time)
-4. $ docker stop nexus (stop nexus container)
-5. $ docker start nexus (start nexus container)
-6. $ docker rm nexus (delete existing nexus container)
+## Install phpmyadmin docker container
+Press command + space to open up the quick search window, Then enter 'terminal' to open the Terminal'
+1. $ docker search phpmyadmin (show all available mysql)
+2. $ docker pull phpmyadmin/phpmyadmin (download phpmyadmin docker image)
+3. $ docker images (verify downloaded images)
+3. $ docker run --name phpmyadmin --link mysql:db -p 8089:80 -d phpmyadmin/phpmyadmin
+4. $ docker stop phpmyadmin (stop phpmyadmin container)
+5. $ docker start phpmyadmin (start phpmyadmin container)
+6. $ docker rm phpmyadmin (delete existing phpmyadmin container)
+7 go web browser: http://localhost:8089/
+8 username:password root:root123 by default
 
-default url: http://localhost:8081/nexus/ 
-default user/password: admin/admin123
