@@ -51,6 +51,8 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 4. $ docker stop phpmyadmin (stop phpmyadmin container)
 5. $ docker start phpmyadmin (start phpmyadmin container)
 6. $ docker rm phpmyadmin (delete existing phpmyadmin container)
-7 go web browser: http://localhost:8089/
-8 username:password root:root123 by default
+7. go web browser: http://localhost:8089
+8. username:password root:root123 by default
+
+## Install php docker container
 
