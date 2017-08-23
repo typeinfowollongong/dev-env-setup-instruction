@@ -54,5 +54,20 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 7. go web browser: http://localhost:8089
 8. username:password root:root123 by default
 
+## Enable PHP & Apache on MacOS
+1. Press command + space to open up the quick search window, Then enter 'terminal' to open the Terminal'
+2. $ sudo su -
+3. $ apachectl start (enable apache)
+4. Open web browser: http://localhost/ to test it
+5. $ cd /etc/apache2
+6. $ cp httpd.conf httpd.conf.sierra
+7. $ vi httpd.conf, then uncomment line of LoadModule php5_module libexec/apache2/libphp5.so (enable php in apache)
+8. $ apachectl restart (restart apache)
+9. 
+
+
+
+
+
 ## Install php docker container
 
