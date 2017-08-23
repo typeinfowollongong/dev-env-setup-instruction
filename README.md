@@ -63,7 +63,7 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 6. $ cp httpd.conf httpd.conf.sierra
 7. $ vi httpd.conf, then uncomment line of LoadModule php5_module libexec/apache2/libphp5.so (enable php in apache)
 8. $ apachectl restart (restart apache)
-9. 
+9. Create the phpinfo.php file in your DocumentRoot (/Library/WebServer/Documents/)
 
 
 
