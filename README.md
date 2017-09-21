@@ -65,9 +65,38 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 8. $ apachectl restart (restart apache)
 9. Create the phpinfo.php file in your DocumentRoot (/Library/WebServer/Documents/)
 
-
-
-
-
 ## Install php docker container
+
+
+## Setup php development enviroment with XAMPP
+1. Install XAMPP
+
+## Configure mutiple virtual hosts in XAMPP
+1. Enable VirtualHosts. Open file '/Applications/XAMPP/xamppfiles/etc/httpd.conf', locate the # Virtual hosts section, and uncommend the following line '#Include /Applications/XAMPP/etc/extra/httpd-vhosts.conf', then save the changes.
+2. Create custom virtualhosts configuration. 
+Open file '/Applications/XAMPP/xamppfiles/etc/extra/httpd-vhosts.conf', at the bottom line, add default virtual host for localhost
+<VirtualHost *:{port number}>
+    ServerName localhost
+    DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs"
+    <Directory "/Applications/XAMPP/xamppfiles/htdocs">
+        Options Indexes FollowSymLinks Includes execCGI
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+Then add custom virtual host
+<VirtualHost *:{port number}>
+    ServerName mysite.local
+    DocumentRoot "/Users/{yourusername}/{site path}"
+    <Directory "/Users/{yourusername}/{site path}">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog "logs/mysite.local-error_log"
+</VirtualHost>
+3. Update hosts file. Go to terminal, enter '$ sudo nano /etc/hosts', then add following configuration at the bottom of line
+127.0.0.1 mysite.local, Press Control+x to save and quit from the file.
+4. Restart Apache.
 
