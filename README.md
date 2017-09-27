@@ -126,5 +126,6 @@ then add following configuration at the bottom of line
 ```
 Press Control+x to save and quit from the file.
 4. Restart Apache.
+
 5. open phpmyadmin http://localhost:8091/phpmyadmin/index.php
 
