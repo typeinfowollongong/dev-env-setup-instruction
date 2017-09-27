@@ -130,3 +130,6 @@ Press Control+x to save and quit from the file.
 
 5. open phpmyadmin http://localhost:8091/phpmyadmin/index.php
 
+6. mysql db database user/password - root/null by default
+
+
