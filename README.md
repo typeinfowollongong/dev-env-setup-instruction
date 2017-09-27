@@ -72,9 +72,25 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 1. Install XAMPP
 
 ## Configure mutiple virtual hosts in XAMPP
-1. Enable VirtualHosts. Open file '/Applications/XAMPP/xamppfiles/etc/httpd.conf', locate the # Virtual hosts section, and uncommend the following line '#Include /Applications/XAMPP/etc/extra/httpd-vhosts.conf', then save the changes.
+
+1. Enable VirtualHosts. 
+Open file 
+```
+/Applications/XAMPP/xamppfiles/etc/httpd.conf
+```
+locate the # Virtual hosts section, and uncommend the following line as below 
+```
+# Virtual hosts
+# Include /Applications/XAMPP/etc/extra/httpd-vhosts.conf
+```
+then save the changes.
+
 2. Create custom virtualhosts configuration. 
-### Open file '/Applications/XAMPP/xamppfiles/etc/extra/httpd-vhosts.conf', at the bottom line, add default virtual host for localhost
+Open file 
+```
+/Applications/XAMPP/xamppfiles/etc/extra/httpd-vhosts.conf
+```
+at the bottom line, add default virtual host for localhost
 ```
 <VirtualHost *:{port number}>
     ServerName localhost
@@ -86,7 +102,7 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
     </Directory>
 </VirtualHost>
 ```
-### Then add custom virtual host
+Then add custom virtual host
 ```
 <VirtualHost *:{port number}>
     ServerName mysite.local
@@ -100,7 +116,11 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 </VirtualHost>
 ```
 3. Update hosts file. 
-Go to terminal, enter '$ sudo nano /etc/hosts', then add following configuration at the bottom of line
+Go to terminal, enter 
+```
+$ sudo nano /etc/hosts
+```
+then add following configuration at the bottom of line
 ```
 127.0.0.1 mysite.local
 ```
