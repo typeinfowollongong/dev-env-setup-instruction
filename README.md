@@ -67,6 +67,28 @@ Press command + space to open up the quick search window, Then enter 'terminal' 
 
 ## Install php docker container
 
+## Install composer
+1. open terminal and download composer composer.phar
+```
+$ curl -s https://getcomposer.org/installer | php
+```
+2. move composer.phar to bin
+```
+$ sudo mv composer.phar /usr/local/bin/
+```
+3.  go to /usr/bin/ folder to create an alias:
+```
+$ vim ~/.bash_profile
+```
+then add following script by enter 'I' as insert mode
+```
+alias composer="php /usr/local/bin/composer.phar"
+```
+press ESC, and :wq to save and quit
+4. quit terminal and reopen a new terminal, type
+```
+$ composer
+```
 
 ## Setup php development enviroment with XAMPP
 1. Install XAMPP
