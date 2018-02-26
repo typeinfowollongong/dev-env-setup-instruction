@@ -89,6 +89,18 @@ press ESC, and :wq to save and quit
 ```
 $ composer
 ```
+5. Install PHPunit by creating composer.json file under the project folder
+```
+{
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
+```
+then run command under the project folder
+```
+composer update
+```
 
 ## Setup php development enviroment with XAMPP
 1. Install XAMPP
